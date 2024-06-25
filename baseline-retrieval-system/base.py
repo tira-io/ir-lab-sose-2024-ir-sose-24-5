@@ -20,15 +20,7 @@ index = tira.pt.index('ir-lab-sose-2024/tira-ir-starter/Index (tira-ir-starter-p
 
 bm25 = pt.BatchRetrieve(index, wmodel="BM25")
 
-
-print('First, we have a short look at the first three topics:')
-pt_dataset.get_topics('text').head(3)
-
-
 print('Now we do the retrieval...')
 run = bm25(pt_dataset.get_topics('text'))
-print('Done. Here are the first 10 entries of the run')
-run.head(10)
-
 
 persist_and_normalize_run(run, system_name='bm25-baseline', default_output='../runs')
